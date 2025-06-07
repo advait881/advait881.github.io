@@ -1,6 +1,21 @@
+- name: Akhil Nishad
+  photo: /assets/Akhil.jpg
+  bio: Entrepreneur & Environmentalist
+  facebook: https://www.facebook.com/share/1JumvZunEz
+  linkedin: https://www.linkedin.com/in/akhil-nishad-43b798185
+  twitter: https://x.com/akhil_nishad_
+
 - name: Dr. Vinit Kumar Sahu
   photo: /assets/Vinit.jpg
-  bio: Assistant Professor at At Govt. K.D College Chhura
+  bio: Assistant Professor at At Govt. K.D College Chhura & fan of Swami Vivekananda
   twitter: https://x.com/vinitsahu777
   facebook: https://www.facebook.com/vinit.sahu.90
+
+- name: Bhupendra Kumar Patel
+  photo: /assets/Bhupendra.jpg
+  bio: Hostel Warden at At Government Hostel, Kharsiya & Social media enthusisast
+  twitter: https://x.com/vinitsahu777
+  facebook: https://www.facebook.com/share/168s7oFaYJ
+  linkedin: https://www.linkedin.com/in/bhupendra-patel-3216b754
+  twitter: https://x.com/bhupendrasatya
 
