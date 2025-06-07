@@ -1,0 +1,64 @@
+---
+layout: default
+title: Certificate Download
+permalink: /certificate/
+---
+<!-- Certificate Download Form -->
+<div id="certificate-form" style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border-radius: 12px; background: #f5f5f5; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  <h2>🎓 Download Your Certificate</h2>
+  <p>Enter your email address to find and download your certificate.</p>
+  
+  <input type="email" id="emailInput" placeholder="Enter your Gmail ID" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px;">
+  
+  <button onclick="fetchCertificate()" style="padding: 10px 20px; background: green; color: white; border: none; border-radius: 6px; cursor: pointer;">Search</button>
+
+  <div id="result" style="margin-top: 20px;"></div>
+</div>
+
+<script>
+  async function fetchCertificate() {
+    const email = document.getElementById('emailInput').value.trim();
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '🔍 Searching...';
+
+    if (!email) {
+      resultDiv.innerHTML = '❌ Please enter a valid email address.';
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://script.google.com/macros/s/AKfycbxOHjDxuPhz19S13BVbGr28HoeKgFdid5bvne5BJbZoB8TooTRQh-9EMKj9fpaqx2kn/exec?email=${encodeURIComponent(email)}`);
+      const data = await response.json();
+
+      if (data.error) {
+        resultDiv.innerHTML = `❌ ${data.error}`;
+        return;
+      }
+
+      let html = `<h3>👤 Name: ${data.name}</h3>`;
+      html += `<p>📥 Found ${data.links.length} certificate(s):</p><ul>`;
+
+      data.links.forEach((link, index) => {
+        // Convert to Google Drive direct link if possible
+        const fileIdMatch = link.match(/[-\w]{25,}/);
+        const directLink = fileIdMatch ? `https://drive.google.com/uc?export=download&id=${fileIdMatch[0]}` : link;
+
+        html += `<li><a href="${directLink}" target="_blank" style="color: blue; text-decoration: underline;">Download Certificate ${index + 1}</a></li>`;
+      });
+
+      html += `</ul>`;
+      resultDiv.innerHTML = html;
+
+    } catch (error) {
+      console.error(error);
+      resultDiv.innerHTML = '⚠️ An error occurred. Please try again later.';
+    }
+  }
+</script>
+
+<!-- Start of Certificate Form -->
+<div class="container">
+  
+</div>
+
+
