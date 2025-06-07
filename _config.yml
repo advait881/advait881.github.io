@@ -324,3 +324,6 @@ defaults:
       comments: # true
       share: true
       related: true
+
+- title: Certificate
+  url: /certificate/
