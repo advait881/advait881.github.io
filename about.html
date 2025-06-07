@@ -139,6 +139,8 @@ permalink: /about.html
         {% if member.twitter %}<a href="{{ member.twitter }}" target="_blank">🐦</a>{% endif %}
         {% if member.linkedin %}<a href="{{ member.linkedin }}" target="_blank">💼</a>{% endif %}
         {% if member.email %}<a href="mailto:{{ member.email }}">✉️</a>{% endif %}
+        {% if member.facebook %}<a href="{{ member.facebook }}">📘</a>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
