@@ -11,6 +11,10 @@ main:
     url: /gallery/
   - title: "Certificate"
     url: /certificate/
+    # Navigation
+header:
+  navigation: main
+
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
